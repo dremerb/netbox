@@ -160,6 +160,7 @@ class SiteGroupTestCase(TestCase, ChangeLoggedFilterSetTests):
 class SiteTestCase(TestCase, ChangeLoggedFilterSetTests):
     queryset = Site.objects.all()
     filterset = SiteFilterSet
+    ignore_fields = ('physical_address', 'shipping_address')
 
     @classmethod
     def setUpTestData(cls):
@@ -416,6 +417,7 @@ class RackRoleTestCase(TestCase, ChangeLoggedFilterSetTests):
 class RackTestCase(TestCase, ChangeLoggedFilterSetTests):
     queryset = Rack.objects.all()
     filterset = RackFilterSet
+    ignore_fields = ('units',)
 
     @classmethod
     def setUpTestData(cls):
@@ -675,6 +677,7 @@ class RackTestCase(TestCase, ChangeLoggedFilterSetTests):
 class RackReservationTestCase(TestCase, ChangeLoggedFilterSetTests):
     queryset = RackReservation.objects.all()
     filterset = RackReservationFilterSet
+    ignore_fields = ('units',)
 
     @classmethod
     def setUpTestData(cls):
@@ -838,6 +841,7 @@ class ManufacturerTestCase(TestCase, ChangeLoggedFilterSetTests):
 class DeviceTypeTestCase(TestCase, ChangeLoggedFilterSetTests):
     queryset = DeviceType.objects.all()
     filterset = DeviceTypeFilterSet
+    ignore_fields = ('front_image', 'rear_image')
 
     @classmethod
     def setUpTestData(cls):
@@ -1829,6 +1833,7 @@ class PlatformTestCase(TestCase, ChangeLoggedFilterSetTests):
 class DeviceTestCase(TestCase, ChangeLoggedFilterSetTests):
     queryset = Device.objects.all()
     filterset = DeviceFilterSet
+    ignore_fields = ('primary_ip4', 'primary_ip6', 'oob_ip', 'local_context_data')
 
     @classmethod
     def setUpTestData(cls):
@@ -2281,6 +2286,7 @@ class DeviceTestCase(TestCase, ChangeLoggedFilterSetTests):
 class ModuleTestCase(TestCase, ChangeLoggedFilterSetTests):
     queryset = Module.objects.all()
     filterset = ModuleFilterSet
+    ignore_fields = ('local_context_data',)
 
     @classmethod
     def setUpTestData(cls):
@@ -3178,6 +3184,7 @@ class PowerOutletTestCase(TestCase, DeviceComponentFilterSetTests, ChangeLoggedF
 class InterfaceTestCase(TestCase, DeviceComponentFilterSetTests, ChangeLoggedFilterSetTests):
     queryset = Interface.objects.all()
     filterset = InterfaceFilterSet
+    ignore_fields = ('untagged_vlan',)
 
     @classmethod
     def setUpTestData(cls):
@@ -5281,6 +5288,7 @@ class PowerFeedTestCase(TestCase, ChangeLoggedFilterSetTests):
 class VirtualDeviceContextTestCase(TestCase, ChangeLoggedFilterSetTests):
     queryset = VirtualDeviceContext.objects.all()
     filterset = VirtualDeviceContextFilterSet
+    ignore_fields = ('primary_ip4', 'primary_ip6')
 
     @classmethod
     def setUpTestData(cls):
