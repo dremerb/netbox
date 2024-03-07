@@ -31,7 +31,7 @@ The type of power outlet.
 
 ### Power Port
 
-When modeling a device which redistributes power from an upstream supply, such as a power distribution unit (PDU), each power outlet should be mapped to the respective [power port](./powerport.md) on the device which supplies power. For example, a 24-outlet PDU may two power ports, each distributing power to 12 of its outlets.
+When modeling a device which redistributes power from an upstream supply, such as a power distribution unit (PDU), each power outlet should be mapped to the respective [power port](./powerport.md) on the device which supplies power. For example, a 24-outlet PDU may have two power ports, each distributing power to 12 of its outlets.
 
 ### Feed Leg
 
